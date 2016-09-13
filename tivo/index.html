@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Graph testing</title>
+	<script type="text/javascript" src="jquery/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="canvasjs-1.8.0/jquery.canvasjs.min.js"></script>
+	<link rel="stylesheet" href="jquery/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.min.css">
+	<script type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap/lumen.min.css">
+	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input id="inputty"></input>
+    <button onClick = "newChart();">CLICK TO ADD CHART</button><br>
+    <input placeholder = "chart name" id = "chart-add"></input>
+    <input placeholder = "plot" id = "chart-add-plot"></input>
+    <input placeholder = "x" id = "chart-add-x"></input>
+    <input placeholder = "y" id = "chart-add-y"></input>
+    <button onclick="addPointFunction()">CLICK TO ADD POINT WITH FUNCTION addPoint(chart, plot, x, y)</button>
+	<div id="minBar"></div>
+	<div class="gridster">
+	    <ul id="sortable">
+		</ul>
+	</div>
+</body>
+</html>

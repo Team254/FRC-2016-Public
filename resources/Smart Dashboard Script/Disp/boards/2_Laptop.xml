@@ -1,0 +1,252 @@
+<xml version="1.0">
+<dashboard>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="1259" y="29"/>
+		<property name="Text" value="Connection"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.ConnectionIndicator">
+		<location x="1229" y="20"/>
+		<width>115</width>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="237" y="44"/>
+		<property name="Text" value="Auton Balls Worn"/>
+	</static-widget>
+	<widget field="Auton Ball Worn?" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.CheckBox">
+		<location x="214" y="41"/>
+	</widget>
+	<widget field="Air Pressure psi" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.SimpleDial">
+		<location x="388" y="124"/>
+		<width>296</width>
+		<height>267</height>
+		<property name="Upper Limit" value="120.0"/>
+	</widget>
+	<widget field="Balls Worn?" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
+		<location x="742" y="115"/>
+		<width>394</width>
+		<height>280</height>
+	</widget>
+	<widget field="turret_rev_limit" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="-24" y="672"/>
+	</widget>
+	<widget field="turret_error" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="2" y="650"/>
+	</widget>
+	<widget field="gyro_center" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="33" y="662"/>
+	</widget>
+	<widget field="hood_setpoint" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="-15" y="664"/>
+		<height>20</height>
+	</widget>
+	<widget field="turret_setpoint" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="19" y="671"/>
+	</widget>
+	<widget field="Auton Mode" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
+		<location x="18" y="19"/>
+	</widget>
+    <widget field="Auton Lane" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
+		<location x="18" y="150"/>
+	</widget>
+	<widget field="flywheel_rpm" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="-33" y="659"/>
+	</widget>
+	<widget field="Hood Tuning Mode" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="-43" y="673"/>
+	</widget>
+	<widget field="robot_pose_y" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="-27" y="671"/>
+	</widget>
+	<widget field="robot_pose_x" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="27" y="650"/>
+	</widget>
+	<widget field="has_hood_homed" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="63" y="672"/>
+	</widget>
+	<widget field="hood_angle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="-6" y="650"/>
+	</widget>
+	<widget field="right_distance" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="-18" y="671"/>
+	</widget>
+	<widget field="shooter_state" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="6" y="659"/>
+	</widget>
+	<widget field="left_distance" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="-6" y="641"/>
+	</widget>
+	<widget field="turret_on_target" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="27" y="673"/>
+	</widget>
+	<widget field="gyro_angle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="-35" y="658"/>
+	</widget>
+	<widget field="goal_debug_y" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="16" y="643"/>
+	</widget>
+	<widget field="goal_debug_x" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="55" y="669"/>
+	</widget>
+	<widget field="goal_centroid_y" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="-1" y="667"/>
+	</widget>
+	<widget field="goal_centroid_x" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="2" y="653"/>
+	</widget>
+	<widget field="goal_pose_x" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="13" y="671"/>
+	</widget>
+	<widget field="heading_error" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="-4" y="663"/>
+	</widget>
+	<widget field="flywheel_setpoint" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="-9" y="659"/>
+	</widget>
+	<widget field="hood_error" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="32" y="669"/>
+	</widget>
+	<widget field="goal_pose_y" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="-6" y="667"/>
+	</widget>
+	<widget field="Output To SmartDashboard" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="9" y="663"/>
+	</widget>
+	<widget field="flywheel_on_target" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="21" y="669"/>
+	</widget>
+	<widget field="right_velocity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="3" y="673"/>
+	</widget>
+	<widget field="turret_angle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="19" y="676"/>
+	</widget>
+	<widget field="left_velocity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="34" y="665"/>
+	</widget>
+	<widget field="current_angle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="30" y="666"/>
+	</widget>
+	<widget field="turret_fwd_limit" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="2" y="657"/>
+	</widget>
+	<widget field="Robot in Start Position" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="663"/>
+	</widget>
+	<widget field="robot_pose_theta" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="-22" y="663"/>
+	</widget>
+	<widget field="hood_on_target" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="28" y="674"/>
+	</widget>
+	<widget field="current_range" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="33" y="659"/>
+	</widget>
+</dashboard>
+<live-window>
+	<widget field="Ungrouped" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<widget field="CANTalon[4]" type="CANSpeedController" class="edu.wpi.first.smartdashboard.livewindow.elements.CANSpeedController">
+			<location x="6" y="16"/>
+			<height>141</height>
+			<width>293</width>
+		</widget>
+		<widget field="CANTalon[8]" type="CANSpeedController" class="edu.wpi.first.smartdashboard.livewindow.elements.CANSpeedController">
+			<location x="6" y="157"/>
+			<height>141</height>
+			<width>293</width>
+		</widget>
+		<widget field="CANTalon[10]" type="CANSpeedController" class="edu.wpi.first.smartdashboard.livewindow.elements.CANSpeedController">
+			<location x="6" y="298"/>
+			<height>141</height>
+			<width>293</width>
+		</widget>
+		<widget field="CANTalon[11]" type="CANSpeedController" class="edu.wpi.first.smartdashboard.livewindow.elements.CANSpeedController">
+			<location x="6" y="439"/>
+			<height>141</height>
+			<width>293</width>
+		</widget>
+		<widget field="CANTalon[2]" type="CANSpeedController" class="edu.wpi.first.smartdashboard.livewindow.elements.CANSpeedController">
+			<location x="6" y="580"/>
+			<height>141</height>
+			<width>293</width>
+		</widget>
+		<widget field="CANTalon[12]" type="CANSpeedController" class="edu.wpi.first.smartdashboard.livewindow.elements.CANSpeedController">
+			<location x="6" y="721"/>
+			<height>141</height>
+			<width>293</width>
+		</widget>
+		<widget field="Solenoid[0,4]" type="Solenoid" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalOutputController">
+			<location x="91" y="862"/>
+			<height>23</height>
+			<width>123</width>
+		</widget>
+		<widget field="Solenoid[0,2]" type="Solenoid" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalOutputController">
+			<location x="91" y="885"/>
+			<height>23</height>
+			<width>123</width>
+		</widget>
+		<widget field="Solenoid[1,3]" type="Solenoid" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalOutputController">
+			<location x="91" y="908"/>
+			<height>23</height>
+			<width>123</width>
+		</widget>
+		<widget field="CANTalon[7]" type="CANSpeedController" class="edu.wpi.first.smartdashboard.livewindow.elements.CANSpeedController">
+			<location x="6" y="931"/>
+			<height>141</height>
+			<width>293</width>
+		</widget>
+		<widget field="DigitalInput[9]" type="Digital Input" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalInputDisplay">
+			<location x="6" y="1072"/>
+			<height>20</height>
+			<width>293</width>
+		</widget>
+		<widget field="Solenoid[0,3]" type="Solenoid" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalOutputController">
+			<location x="91" y="1092"/>
+			<height>23</height>
+			<width>123</width>
+		</widget>
+		<widget field="Solenoid[0,1]" type="Solenoid" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalOutputController">
+			<location x="91" y="1115"/>
+			<height>23</height>
+			<width>123</width>
+		</widget>
+		<widget field="Solenoid[1,1]" type="Solenoid" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalOutputController">
+			<location x="91" y="1138"/>
+			<height>23</height>
+			<width>123</width>
+		</widget>
+		<widget field="Solenoid[0,5]" type="Solenoid" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalOutputController">
+			<location x="91" y="1161"/>
+			<height>23</height>
+			<width>123</width>
+		</widget>
+		<widget field="CANTalon[3]" type="CANSpeedController" class="edu.wpi.first.smartdashboard.livewindow.elements.CANSpeedController">
+			<location x="6" y="1184"/>
+			<height>141</height>
+			<width>293</width>
+		</widget>
+		<widget field="Solenoid[0,0]" type="Solenoid" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalOutputController">
+			<location x="91" y="1325"/>
+			<height>23</height>
+			<width>123</width>
+		</widget>
+		<widget field="Solenoid[1,2]" type="Solenoid" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalOutputController">
+			<location x="91" y="1348"/>
+			<height>23</height>
+			<width>123</width>
+		</widget>
+		<widget field="ADXRS453_Gyro[0]" type="Gyro" class="edu.wpi.first.smartdashboard.gui.elements.Compass">
+			<location x="6" y="1371"/>
+			<height>150</height>
+			<width>293</width>
+		</widget>
+		<widget field="CANTalon[1]" type="CANSpeedController" class="edu.wpi.first.smartdashboard.livewindow.elements.CANSpeedController">
+			<location x="6" y="1521"/>
+			<height>141</height>
+			<width>293</width>
+		</widget>
+		<location x="0" y="0"/>
+		<width>305</width>
+		<height>1669</height>
+	</widget>
+</live-window>
+</xml>

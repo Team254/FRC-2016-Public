@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<style>
+		#text{
+		   text-align: center;
+		   font-family: "Helvetica";
+		   font-size: 56px;
+		   margin-top: 80vh;
+		 }
+	</style>
+</head>
+<body id="body">
+
+<!-- This starts the NetworkTables websocket, it can be accessed from multiple
+     pages simultaneously -->
+<script src="/networktables/networktables.js"></script>
+
+<!-- Obviously, you will want to copy this file locally in a real 
+     dashboard, as the Driver Station won't have internet access -->
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+<!-- uncomment this is you want to use included utility functions that
+     implement common functionality that you might find useful. Requires
+     that d3.js and jQuery are included first -->
+<!-- <script src="/networktables/utils.js"></script> -->
+
+<div>
+	NetworkTables websocket: <span id="connectstate">Unknown state</span><br/>
+	Robot: <span id="robotstate">Unknown state</span>
+</div>
+
+<h1 id="text"></h1>
+
+<table id="nt" border=1>
+	<tbody></tbody>
+</table>
+
+
+<script type="text/javascript">
+
+
+/**
+* NO_CAM
+* CAM_STOWED
+* LOOKING_FOR_GOAL
+* AIMING
+* LOCKED
+*/
+
+
+$(document).ready(function(){
+	// sets a function that will be called when the websocket connects/disconnects
+	NetworkTables.addWsConnectionListener(onNetworkTablesConnection, true);
+	
+	// sets a function that will be called when the robot connects/disconnects
+	NetworkTables.addRobotConnectionListener(onRobotConnection, true);
+	
+	// sets a function that will be called when any NetworkTables key/value changes
+	NetworkTables.addGlobalListener(onValueChanged, true);
+});
+function onRobotConnection(connected) {
+	$('#robotstate').text(connected ? "Connected!" : "Disconnected");
+}
+function onNetworkTablesConnection(connected) {
+	if (connected) {
+		$("#connectstate").text("Connected!");
+		
+		// clear the table
+		$("#nt tbody > tr").remove();
+		
+	} else {
+		$("#connectstate").text("Disconnected!");
+	}
+}
+function onValueChanged(key, value, isNew) {
+	// key thing here: we're using the various NetworkTable keys as
+	// the id of the elements that we're appending, for simplicity. However,
+	// the key names aren't always valid HTML identifiers, so we use
+	// the NetworkTables.keyToId() function to convert them appropriately
+	if (isNew) {
+		var tr = $('<tr></tr>').appendTo($('#nt > tbody:last'));
+		$('<td></td>').text(key).appendTo(tr);
+		$('<td></td>').attr('id', NetworkTables.keyToId(key))
+					   .text(value)
+					   .appendTo(tr);
+	} else {s
+	
+		// similarly, use keySelector to convert the key to a valid jQuery
+		// selector. This should work for class names also, not just for ids
+		$('#' + NetworkTables.keySelector(key)).text(value);
+	}
+
+	if (key == "shooter/state") {
+		receivedUpdate(value)
+	}
+}
+
+
+
+function receivedUpdate(state) {
+
+ var output;
+ var color;
+ var tcolor = "white"
+
+ switch (state) {
+   case "NO_CAM":
+     output = "NO CAMERA";
+     color = "red"
+     //returns RED
+     break;
+   case "CAM_STOWED":
+     output = "CAMERA STOWED";
+     color = "#0070FF "
+     //returns CHEZY BLUE (0,112,255)
+     break;
+   case "LOOKING_FOR_GOAL":
+     output = "LOOKING FOR GOAL";
+     color = "orange"
+     //returns ORANGE
+     break;
+   case "AIMING":
+     output = "AIMING";
+     color = "yellow"
+     tcolor = "black"
+     //returns YELLOW
+     break;
+   case "LOCKED":
+     output = "LOCKED";
+     color = "green"
+     //returns GREEN
+     break;
+   default:
+     output = "BAD STATE - DISCONNECTED"
+     color = "red"
+     break;
+ }
+
+ document.getElementById("text").style.color = tcolor;
+ document.getElementById("text").innerHTML = output;
+ document.getElementById("body").style["background-color"]=color;
+
+}
+
+
+receivedUpdate("NO_CAM")
+</script>
+
+</body>
+</html>
