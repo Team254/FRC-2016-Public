@@ -4,6 +4,55 @@ The 2016 FRC robot code for Dropshot. Dropshot's code is written in Java and is 
 
 The code is divided into several packages, each responsible for a different aspect of the robot function. This README explains the function of each package, some of the variable naming conventions used, and setup instructions. Additional information about each specific class can be found in that class's java file.
 
+## How to Write code in IntelliJ
+- Create a new directory to be the "top level" of your IntelliJ project. I call mine `~/pofs/robot`
+- Check out this repo into that directory:
+```
+~ $ cd ~/pofs/robot/
+~/pofs/robot $ git clone https://github.com/Team254/FRC-2016.git
+~/pofs/robot $ ls
+FRC-2016
+```
+- In IntelliJ, create a new empty project (not a java project, just an empty project) at your "top level". This Should create a `.idea` folder if you did it in the right spot
+```
+# after making the project:
+~/pofs/robot $ ls -a
+.  ..  .idea  FRC-2016
+```
+- In intelliJ, you should be in the "project settings" window. Create a new module from existing sources on the `FRC-2016` folder, IntelliJ should pick up `src/` as the content root.
+- In the project settings window, add a new Java library for wiplib. Select all the jars in `~/wpilib/java/current/libs/`. It'll give it a wonky name like "networktables", but that doesn't matter. Choose to include it in the `FRC-2016` project.
+- In project settings, under the "prject section" set your JDK to Java 1.8
+- You can now write code with auto-complete in IntelliJ, but not build/deploy
+- In IntelliJ, in the "ant build" pane, add `FRC-2016/build.xml`. To deploy code to the robot, double click `athena-project-build.build`
+
+## How to Install ADB
+
+Download and run the script from [here] (https://github.com/Team254/FRC-2016-Public/blob/master/installation/install.osx.sh). Note that this script has only been tested on Mac OS X; it hasn't been tested on Windows or Linux.
+
+## How to run CheesyLogger
+
+You'll need to install Mosquitto on your machine. On osx that's:
+
+```
+$ brew install mosquitto
+```
+
+There's probably a compatible apt-get package for linux (I haven't looked at time of writing).
+
+In CheesyLogger.java, change the mqtt server url to be your laptop. You can use your IP, or your mDNS record. Mine is `tcp://leighpauls-mbp.synergy.bcp.org:1883`.
+
+Run the mqtt broker server:
+```
+~/pofs/robot/FRC-2016 $ ./logger/run_mqtt_server.sh
+1453174940: mosquitto version 1.4.5 (build date 2015-11-09 14:23:18-0800) starting
+1453174940: Config loaded from ./logger/mosquitto.conf.
+1453174940: Opening ipv4 listen socket on port 1883.
+1453174940: Opening ipv6 listen socket on port 1883.
+1453174940: Opening websockets listen socket on port 11883.
+```
+
+Point your browser at `file:///Users/*YOUR_USERNAME*/pofs/robot/FRC-2016/logger/logger.html` (replacing the path with wherever your repo lives).
+
 ##Package Functions
 - com.team254.frc2016
 
@@ -51,48 +100,3 @@ The code is divided into several packages, each responsible for a different aspe
 - k_*** (i.e. kMinHoodAngle)    : Final constants, especialy those found in the Constants.java file
 - K_*** (i.e. K_VISION_MODE)    : Static constants
 - m***  (i.e. mStartingDistance): Private instance variables
-
-## How to Write code in IntelliJ
-- Create a new directory to be the "top level" of your IntelliJ project. I call mine `~/pofs/robot`
-- Check out this repo into that directory:
-```
-~ $ cd ~/pofs/robot/
-~/pofs/robot $ git clone https://github.com/Team254/FRC-2016.git
-~/pofs/robot $ ls
-FRC-2016
-```
-- In IntelliJ, create a new empty project (not a java project, just an empty project) at your "top level". This Should create a `.idea` folder if you did it in the right spot
-```
-# after making the project:
-~/pofs/robot $ ls -a
-.  ..  .idea  FRC-2016
-```
-- In intelliJ, you should be in the "project settings" window. Create a new module from existing sources on the `FRC-2016` folder, IntelliJ should pick up `src/` as the content root.
-- In the project settings window, add a new Java library for wiplib. Select all the jars in `~/wpilib/java/current/libs/`. It'll give it a wonky name like "networktables", but that doesn't matter. Choose to include it in the `FRC-2016` project.
-- In project settings, under the "prject section" set your JDK to Java 1.8
-- You can now write code with auto-complete in IntelliJ, but not build/deploy
-- In IntelliJ, in the "ant build" pane, add `FRC-2016/build.xml`. To deploy code to the robot, double click `athena-project-build.build`
-
-## How to run CheesyLogger
-
-You'll need to install Mosquitto on your machine. On osx that's:
-
-```
-$ brew install mosquitto
-```
-
-There's probably a compatible apt-get package for linux (I haven't looked at time of writing).
-
-In CheesyLogger.java, change the mqtt server url to be your laptop. You can use your IP, or your mDNS record. Mine is `tcp://leighpauls-mbp.synergy.bcp.org:1883`.
-
-Run the mqtt broker server:
-```
-~/pofs/robot/FRC-2016 $ ./logger/run_mqtt_server.sh
-1453174940: mosquitto version 1.4.5 (build date 2015-11-09 14:23:18-0800) starting
-1453174940: Config loaded from ./logger/mosquitto.conf.
-1453174940: Opening ipv4 listen socket on port 1883.
-1453174940: Opening ipv6 listen socket on port 1883.
-1453174940: Opening websockets listen socket on port 11883.
-```
-
-Point your browser at `file:///Users/*YOUR_USERNAME*/pofs/robot/FRC-2016/logger/logger.html` (replacing the path with wherever your repo lives).
