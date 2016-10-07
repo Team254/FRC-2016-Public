@@ -25,10 +25,6 @@ FRC-2016
 - You can now write code with auto-complete in IntelliJ, but not build/deploy
 - In IntelliJ, in the "ant build" pane, add `FRC-2016/build.xml`. To deploy code to the robot, double click `athena-project-build.build`
 
-## How to Install ADB
-
-Download and run the script from [here] (https://github.com/Team254/FRC-2016-Public/blob/master/installation/install.osx.sh). Note that this script has only been tested on Mac OS X; it hasn't been tested on Windows or Linux.
-
 ## How to run CheesyLogger
 
 You'll need to install Mosquitto on your machine. On osx that's:
